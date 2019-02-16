@@ -1,0 +1,19 @@
+{
+  "name": "koreanjson",
+  "version": "1.0.0",
+  "description": "Fake JSON API in Korean",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jungdo Lee",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.42.0"
+  }
+}
