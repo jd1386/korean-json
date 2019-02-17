@@ -43,5 +43,7 @@ db.Sequelize = Sequelize;
 // Relations
 db.User.hasMany(db.Post);
 db.Post.belongsTo(db.User);
+db.User.hasMany(db.Todo);
+db.Todo.belongsTo(db.User);
 
 module.exports = db;
