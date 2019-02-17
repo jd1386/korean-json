@@ -21,8 +21,10 @@ app.get('/users', (req, res) => {
 });
 
 app.get('/users/:id', async (req, res) => {
-  if (req.params.id) {
-    const user = await User.findByPk(req.params.id);
+  const { id } = req.params;
+
+  if (id) {
+    const user = await User.findByPk(id);
     res.json(user);
   }
 });
@@ -32,16 +34,25 @@ app.get('/posts', async (req, res) => {
   res.json(posts);
 });
 
+app.get('/posts/:id', async (req, res) => {
+  const { id } = req.params;
+
+  if (id) {
+    const post = await Post.findByPk(id);
+    res.json(post);
+  }
+});
+
 // connect to database and run seeders
 sequelize
   .sync({ force: true })
   .then(() => {
     console.log('db started');
-    seeders.firstGroup();
+    return seeders.firstGroup();
   })
   .then(() => {
-    seeders.secondGroup();
     console.log('second group seeders');
+    return seeders.secondGroup();
   })
   .catch(error => console.log(error));
 
