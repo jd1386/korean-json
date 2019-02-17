@@ -1,7 +1,7 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
-import { sequelize, User, Post, Todo } from './models';
+import { sequelize, User, Post, Todo, Comment } from './models';
 import seeders from './seeders';
 import http from 'http';
 
@@ -73,6 +73,23 @@ app.get('/todos/:id', async (req, res) => {
 
   const todo = await Todo.findByPk(id);
   res.json(todo);
+});
+
+app.get('/comments', async (req, res) => {
+  // const comments = await Comment.findAll();
+  const comments = await Comment.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['name', 'username', 'email']
+      },
+      {
+        model: Post
+      }
+    ],
+    order: [['id', 'asc']]
+  });
+  res.json(comments);
 });
 
 // connect to database and run seeders
