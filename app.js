@@ -1,9 +1,11 @@
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
+import express from 'express';
+import logger from 'morgan';
+import bodyParser from 'body-parser';
 import { sequelize, User, Post } from './models';
-const seeders = require('./seeders');
-const http = require('http');
+import seeders from './seeders';
+import http from 'http';
+
+// initialize app instance
 const app = express();
 
 // use logger
@@ -30,8 +32,19 @@ app.get('/users/:id', async (req, res) => {
 });
 
 app.get('/posts', async (req, res) => {
-  const posts = await Post.findAll();
-  res.json(posts);
+  try {
+    const { userId } = req.query;
+    if (userId) {
+      const user = await User.findByPk(userId);
+      const posts = await user.getPosts();
+      return res.json(posts);
+    }
+
+    const posts = await Post.findAll();
+    res.json(posts);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.get('/posts/:id', async (req, res) => {

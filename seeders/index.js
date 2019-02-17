@@ -1,7 +1,7 @@
 import userSeeder from './users';
 import postSeeder from './posts';
 
-module.exports = {
+export default {
   firstGroup: () => Promise.all([userSeeder()]),
   secondGroup: () => Promise.all([postSeeder()])
 };
