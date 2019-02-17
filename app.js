@@ -1,7 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const db = require('./models');
+import { sequelize, User, Post } from './models';
 const seeders = require('./seeders');
 const http = require('http');
 const app = express();
@@ -15,16 +15,35 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // routes
 app.get('/users', (req, res) => {
-  db.User.findAll().then(users => {
+  User.findAll().then(users => {
     res.json(users);
   });
 });
 
-// connect to database and run seeders
-db.sequelize.sync({ force: true }).then(() => {
-  console.log('db started');
-  seeders.firstGroup();
+app.get('/users/:id', async (req, res) => {
+  if (req.params.id) {
+    const user = await User.findByPk(req.params.id);
+    res.json(user);
+  }
 });
+
+app.get('/posts', async (req, res) => {
+  const posts = await Post.findAll();
+  res.json(posts);
+});
+
+// connect to database and run seeders
+sequelize
+  .sync({ force: true })
+  .then(() => {
+    console.log('db started');
+    seeders.firstGroup();
+  })
+  .then(() => {
+    seeders.secondGroup();
+    console.log('second group seeders');
+  })
+  .catch(error => console.log(error));
 
 // start server
 const port = parseInt(process.env.PORT) || 5000;
