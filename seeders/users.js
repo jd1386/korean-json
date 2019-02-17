@@ -1,7 +1,7 @@
-const db = require('../models');
+import { User } from '../models';
 
-module.exports = () => {
-  db.User.bulkCreate([
+export default () => {
+  User.bulkCreate([
     {
       name: '이정도',
       username: 'jd1386',
