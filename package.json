@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
+    "dev": "NODE_ENV=development nodemon app.js --exec babel-node --presets env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jungdo Lee",
@@ -12,8 +13,13 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
     "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
