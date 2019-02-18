@@ -2,6 +2,7 @@ import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import http from 'http';
+import cors from 'cors';
 import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
 import seeders from './seeders';
 import usersRouter from './routes/users';
@@ -12,12 +13,14 @@ import commentsRouter from './routes/comments';
 // initialize app instance
 const app = express();
 
+// middlewares
 // use logger
 app.use(logger('dev'));
-
 // parse incoming request data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// cors
+app.use(cors());
 
 // routes
 app.use('/users', usersRouter);
