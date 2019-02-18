@@ -3,6 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import http from 'http';
 import cors from 'cors';
+import apicache from 'apicache';
 import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
 import seeders from './seeders';
 import {
@@ -23,6 +24,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // cors
 app.use(cors());
+// api cache
+// apicache.options({ debug: true });
+const cache = apicache.middleware;
+app.use(cache('1 week'));
 
 // routes
 app.use('/users', usersRouter);
