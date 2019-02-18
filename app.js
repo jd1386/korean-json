@@ -5,10 +5,12 @@ import http from 'http';
 import cors from 'cors';
 import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
 import seeders from './seeders';
-import usersRouter from './routes/users';
-import postsRouter from './routes/posts';
-import todosRouter from './routes/todos';
-import commentsRouter from './routes/comments';
+import {
+  usersRouter,
+  postsRouter,
+  todosRouter,
+  commentsRouter
+} from './routes';
 
 // initialize app instance
 const app = express();
