@@ -24,10 +24,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // cors
 app.use(cors());
-// api cache
-// apicache.options({ debug: true });
-const cache = apicache.middleware;
-app.use(cache('1 week'));
 
 // routes
 app.use('/users', usersRouter);

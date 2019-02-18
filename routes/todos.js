@@ -1,8 +1,10 @@
 import express from 'express';
+import apicache from 'apicache';
 import { sequelize, User, Post, Todo, ApiStat } from '../models';
 import { ApiStatCounter } from '../util';
 
 const router = express.Router();
+const cache = apicache.middleware;
 
 const updateApiStat = (req, res, next) => {
   // update ApiStat
@@ -12,7 +14,7 @@ const updateApiStat = (req, res, next) => {
 
 router.use(updateApiStat);
 
-router.get('/', async (req, res) => {
+router.get('/', cache('1 week'), async (req, res) => {
   try {
     const { userId } = req.query;
 
