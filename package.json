@@ -8,7 +8,8 @@
     "dev": "NODE_ENV=development nodemon app.js --exec babel-node --presets env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jungdo Lee",
+  "author": "Jungdo Lee & Jae Wan Kim",
+  "repository": "github:jd1386/korean-json",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
