@@ -1,8 +1,9 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
-import { sequelize, User, Post, Todo, Comment } from './models';
+import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
 import seeders from './seeders';
+import { ApiStatCounter } from './util';
 import http from 'http';
 
 // initialize app instance
@@ -16,14 +17,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // routes
-app.get('/users', (req, res) => {
-  User.findAll().then(users => {
-    res.json(users);
-  });
+app.get('/users', async (req, res) => {
+  ApiStatCounter('users');
+  const users = await User.findAll();
+  res.json(users);
 });
 
 app.get('/users/:id', async (req, res) => {
   const { id } = req.params;
+  ApiStatCounter('posts');
 
   const user = await User.findByPk(id);
   res.json(user);
@@ -32,6 +34,8 @@ app.get('/users/:id', async (req, res) => {
 app.get('/posts', async (req, res) => {
   try {
     const { userId } = req.query;
+    ApiStatCounter('posts');
+
     if (userId) {
       const user = await User.findByPk(userId);
       const posts = await user.getPosts();
@@ -49,12 +53,15 @@ app.get('/posts/:id', async (req, res) => {
   const { id } = req.params;
 
   const post = await Post.findByPk(id);
+  ApiStatCounter('posts');
   res.json(post);
 });
 
 app.get('/todos', async (req, res) => {
   try {
+    ApiStatCounter('todos');
     const { userId } = req.query;
+
     if (userId) {
       const user = await User.findByPk(userId);
       const todos = await user.getTodos();
@@ -70,13 +77,14 @@ app.get('/todos', async (req, res) => {
 
 app.get('/todos/:id', async (req, res) => {
   const { id } = req.params;
-
+  ApiStatCounter('posts');
   const todo = await Todo.findByPk(id);
   res.json(todo);
 });
 
 app.get('/comments', async (req, res) => {
-  // const comments = await Comment.findAll();
+  ApiStatCounter('comments');
+
   const comments = await Comment.findAll({
     include: [
       {
