@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "sequelize-cli": "^5.4.0"
   }
 }
