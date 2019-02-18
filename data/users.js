@@ -34,5 +34,29 @@ export default [
     district: '강동구',
     street: '성내로 25',
     zipcode: '05397'
+  },
+  {
+    name: '이주연',
+    username: 'yyijoo',
+    email: 'jooyeon@gmail.com',
+    phone: '010-2940-1401',
+    website: 'https://github.com/yyijoo',
+    province: '경기도',
+    city: '용인시',
+    district: '수지구',
+    street: '포은대로 435',
+    zipcode: '16835'
+  },
+  {
+    name: '구일모',
+    username: 'johnnykoo84',
+    email: 'johnny@gmail.com',
+    phone: '010-8491-3982',
+    website: 'https://github.com/johnnykoo84',
+    province: '',
+    city: '서울특별시',
+    district: '강남구',
+    street: '학동로 426',
+    zipcode: '06090'
   }
 ];
