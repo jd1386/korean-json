@@ -17,7 +17,7 @@
     "username": "root",
     "password": "koreanjson01",
     "database": "koreanjson_production",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql",
     "dialectOptions": {
       "socketPath": "/var/run/mysqld/mysqld.sock"
