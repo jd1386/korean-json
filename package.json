@@ -4,7 +4,7 @@
   "description": "Fake JSON API in Korean",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production pm2 start app.js --exec babel-node --presets env",
+    "start": "NODE_ENV=production pm2 start --interpreter ./node_modules/.bin/babel-node app.js",
     "dev": "NODE_ENV=development nodemon app.js --exec babel-node --presets env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
