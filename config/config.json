@@ -15,7 +15,7 @@
   },
   "production": {
     "username": "root",
-    "password": "root",
+    "password": "koreanjson01",
     "database": "koreanjson_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
