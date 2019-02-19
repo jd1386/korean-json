@@ -21,9 +21,7 @@
     "mysql2": "^1.6.5",
     "pm2": "^3.3.1",
     "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0"
-  },
-  "devDependencies": {
+    "sequelize-cli": "^5.4.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
   }
