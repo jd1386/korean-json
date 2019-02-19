@@ -18,9 +18,6 @@
     "password": "koreanjson01",
     "database": "koreanjson_production",
     "host": "localhost",
-    "dialect": "mysql",
-    "dialectOptions": {
-      "socketPath": "/var/run/mysqld/mysqld.sock"
-    }
+    "dialect": "mysql"
   }
 }
