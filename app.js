@@ -3,6 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import http from 'http';
 import cors from 'cors';
+import exphbs from 'express-handlebars';
 import apicache from 'apicache';
 import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
 import seeders from './seeders';
@@ -24,8 +25,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // cors
 app.use(cors());
+// view engine
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
 // routes
+app.get('/', (req, res) => {
+  res.render('home');
+});
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/todos', todosRouter);
