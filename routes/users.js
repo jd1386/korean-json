@@ -25,4 +25,12 @@ router.get('/:id', async (req, res) => {
   res.json(user);
 });
 
+router.post('/', (req, res) => {
+  res.status(201).send('OK');
+});
+
+router.delete('/', (req, res) => {
+  res.status(202).send('OK');
+});
+
 module.exports = router;

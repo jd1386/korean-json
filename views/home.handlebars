@@ -38,7 +38,8 @@
       get
       the most out of the look and feel of Korean language.</p>
     <p class="lead">한국어 데이터를 제공하는 초간단 JSON API. <br />
-      GET, POST, DELETE 요청을 보내고 한국어 데이터를 받으세요. 라틴어인 로렘입숨 대신 한글 데이터를 사용하면 프로토타이핑이 조금 더 현실적이고 즐거워집니다.
+      GET, POST, DELETE 요청을 보내고 한국어 데이터를 받으세요. 라틴어이자 알파벳 문자인 로렘입숨 대신 한글 데이터를 사용하면 프로토타이핑을 조금 더 현실적인 환경에서, 조금 더 빠르고 즐겁게 할
+      수 있습니다.
     </p>
     <p class="text-muted">This project is heavily inspired by <a
         href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a> of which we have been a big fan for a long
@@ -62,23 +63,58 @@
           <tbody>
             <tr>
               <th scope="row"><a href="/users">/users</a></th>
-              <td>유저</td>
+              <td>유저 목록, 생성, 삭제</td>
               <td>GET, POST, DELETE</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/users/1">/users/:id</a></th>
+              <td>유저 조회</td>
+              <td>GET</td>
             </tr>
             <tr>
               <th scope="row"><a href="/posts">/posts</a></th>
-              <td>포스트</td>
+              <td>포스트 목록, 생성, 삭제</td>
               <td>GET, POST, DELETE</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/posts/1">/posts/:id</a></th>
+              <td>포스트 조회</td>
+              <td>GET</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/posts?userId=1">/posts?userId={id}</a></th>
+              <td>유저별 포스트 조회</td>
+              <td>GET</td>
             </tr>
             <tr>
               <th scope="row"><a href="/todos">/todos</a></th>
-              <td>할 일</td>
+              <td>할 일 목록, 생성, 삭제</td>
               <td>GET, POST, DELETE</td>
             </tr>
             <tr>
+              <th scope="row"><a href="/todos/:id">/todos/:id</a></th>
+              <td>할 일 조회</td>
+              <td>GET</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/todos?userId=1">/todos?userId={id}</a></th>
+              <td>유저별 할 일 조회</td>
+              <td>GET</td>
+            </tr>
+            <tr>
               <th scope="row"><a href="/comments">/comments</a></th>
-              <td>댓글</td>
+              <td>댓글 목록, 생성, 삭제</td>
               <td>GET, POST, DELETE</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/comments?userId=1">/comments?userId={id}</a></th>
+              <td>유저별 댓글 조회</td>
+              <td>GET</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/comments?postId=1">/comments?postId={id}</a></th>
+              <td>포스트별 댓글 조회</td>
+              <td>GET</td>
             </tr>
           </tbody>
         </table>
@@ -92,7 +128,6 @@
       <div><a href="http://github.com/jd1386/korean-json">Github repo</a>에서 누구나 pull request 하실 수 있습니다. </div>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

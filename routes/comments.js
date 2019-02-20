@@ -15,6 +15,20 @@ const updateApiStat = (req, res, next) => {
 router.use(updateApiStat);
 
 router.get('/', cache('1 week'), async (req, res) => {
+  const { userId, postId } = req.query;
+
+  if (userId) {
+    const user = await User.findByPk(userId);
+    const comments = await user.getComments();
+    res.json(comments);
+  }
+
+  if (postId) {
+    const post = await Post.findByPk(postId);
+    const comments = await post.getComments();
+    res.json(comments);
+  }
+
   const comments = await Comment.findAll({
     include: [
       {
