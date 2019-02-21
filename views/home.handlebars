@@ -17,6 +17,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&amp;subset=korean" rel="stylesheet">
+  <!-- highlight.js starts -->
+  <link rel="stylesheet" href="/css/ocean.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- highlight.js ends -->
+  <style>
+    #code-response-wrapper {
+      display: none;
+    }
+  </style>
 
   <title>Korean JSON</title>
 </head>
@@ -31,103 +41,132 @@
     </nav>
   </div>
 
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-    <h1 class="display-4">Korean JSON</h1>
-    <p class="lead mt-4">Super simple JSON API in Korean. <br />
-      Request GET, POST, DELETE actions and get JSON data in Korean
-      to
-      get
-      the most out of the look and feel of Korean language.</p>
-    <p class="lead">
-      한국어 데이터를 제공하는 초간단 JSON API. <br />
-      GET, POST, DELETE 요청을 보내고 한국어 데이터를 받으세요. 라틴어이자 알파벳 문자인 로렘입숨 대신 한글 데이터를 사용하면 프로토타이핑을 조금 더 현실적인 환경에서, 조금 더 빠르고 즐겁게 할
-      수 있습니다.
-    </p>
-    <p class="text-muted">This project is heavily inspired by <a
-        href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a> of which we have been big fans for a long
-      time.
-      <br />
-      저희는 JSONPlaceholder의 오랜 사용자이자 팬으로서 한국어 사용자들을 대상으로 제작하였습니다.</p>
-  </div>
+  <div class="container">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+      <h1 class="display-4">Korean JSON</h1>
+      <p class="lead mt-4">Super simple JSON API in Korean. <br />
+        Request GET, POST, DELETE actions and get JSON data in Korean
+        to
+        get
+        the most out of the look and feel of Korean language.</p>
+      <p class="lead">
+        한국어 데이터를 제공하는 초간단 JSON API. <br />
+        GET, POST, DELETE 요청을 보내고 한국어 데이터를 받으세요. 라틴어이자 알파벳 문자인 로렘입숨 대신 한글 데이터를 사용하면 프로토타이핑을 조금 더 현실적인 환경에서, 조금 더 빠르고 즐겁게
+        할
+        수 있습니다.
+      </p>
+      <p class="text-muted">This project is heavily inspired by <a
+          href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a> of which we have been big fans for a long
+        time.
+        <br />
+        저희는 JSONPlaceholder의 오랜 사용자이자 팬으로서 한국어 사용자들을 대상으로 제작하였습니다.</p>
+    </div>
 
-  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-    <div>
-      <h3>Resources</h3>
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
       <div>
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Endpoint</th>
-              <th scope="col">Resource</th>
-              <th scope="col">Methods</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row"><a href="/users">/users</a></th>
-              <td>유저 목록, 생성, 삭제</td>
-              <td>GET, POST, DELETE</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/users/1">/users/:id</a></th>
-              <td>유저 조회</td>
-              <td>GET</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/posts">/posts</a></th>
-              <td>포스트 목록, 생성, 삭제</td>
-              <td>GET, POST, DELETE</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/posts/1">/posts/:id</a></th>
-              <td>포스트 조회</td>
-              <td>GET</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/posts?userId=1">/posts?userId={id}</a></th>
-              <td>유저별 포스트 조회</td>
-              <td>GET</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/todos">/todos</a></th>
-              <td>할 일 목록, 생성, 삭제</td>
-              <td>GET, POST, DELETE</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/todos/1">/todos/:id</a></th>
-              <td>할 일 조회</td>
-              <td>GET</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/todos?userId=1">/todos?userId={id}</a></th>
-              <td>유저별 할 일 조회</td>
-              <td>GET</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/comments">/comments</a></th>
-              <td>댓글 목록, 생성, 삭제</td>
-              <td>GET, POST, DELETE</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/comments?userId=1">/comments?userId={id}</a></th>
-              <td>유저별 댓글 조회</td>
-              <td>GET</td>
-            </tr>
-            <tr>
-              <th scope="row"><a href="/comments?postId=1">/comments?postId={id}</a></th>
-              <td>포스트별 댓글 조회</td>
-              <td>GET</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3>Example</h3>
+
+        <div>
+          <pre>
+          <code class="javascript">
+  fetch('https://koreanjson.com/posts/1');
+    .then(response => response.json());
+    .then(json => console.log(json));
+    .catch(error => console.log(error));
+          </code>
+        </pre>
+          <div>
+            <button class="btn btn-success" id="run-code-btn">코드 실행하기</button>
+          </div>
+          <div id="code-response-wrapper">
+            <pre>
+            <code class="json" id="code-response">
+            </code>
+          </pre>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-    <div>
-      <h3>How to contribute</h3>
-      <div><a href="http://github.com/jd1386/korean-json">Github repo</a>에서 누구나 pull request 하실 수 있습니다. </div>
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+      <div>
+        <h3>Routes</h3>
+        <div>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Endpoint</th>
+                <th scope="col">Resource</th>
+                <th scope="col">Methods</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><a href="/users">/users</a></th>
+                <td>유저 목록, 생성, 삭제</td>
+                <td>GET, POST, DELETE</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/users/1">/users/:id</a></th>
+                <td>유저 조회</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/posts">/posts</a></th>
+                <td>포스트 목록, 생성, 삭제</td>
+                <td>GET, POST, DELETE</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/posts/1">/posts/:id</a></th>
+                <td>포스트 조회</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/posts?userId=1">/posts?userId={id}</a></th>
+                <td>유저별 포스트 조회</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/todos">/todos</a></th>
+                <td>할 일 목록, 생성, 삭제</td>
+                <td>GET, POST, DELETE</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/todos/1">/todos/:id</a></th>
+                <td>할 일 조회</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/todos?userId=1">/todos?userId={id}</a></th>
+                <td>유저별 할 일 조회</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/comments">/comments</a></th>
+                <td>댓글 목록, 생성, 삭제</td>
+                <td>GET, POST, DELETE</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/comments?userId=1">/comments?userId={id}</a></th>
+                <td>유저별 댓글 조회</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/comments?postId=1">/comments?postId={id}</a></th>
+                <td>포스트별 댓글 조회</td>
+                <td>GET</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+      <div>
+        <h3>How to Contribute</h3>
+        <div><a href="http://github.com/jd1386/korean-json">Github repo</a>에서 누구나 pull request 하실 수 있습니다. </div>
+      </div>
     </div>
   </div>
 
@@ -140,6 +179,19 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script>
+    $('#run-code-btn').on('click', () => {
+      fetch('https://koreanjson.com/posts/1')
+        .then(response => response.json())
+        .then(json => {
+          $('#code-response').html(JSON.stringify(json, undefined, " "));
+          hljs.highlightBlock(document.getElementById('code-response'))
+          $('#code-response-wrapper').show();
+          $('#run-code-btn').replaceWith('<h4>실행 결과 😃</h4>')
+        })
+        .catch(error => console.log(error));
+    });
+  </script>
 
 </body>
 

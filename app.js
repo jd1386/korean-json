@@ -1,6 +1,7 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
+import path from 'path';
 import http from 'http';
 import cors from 'cors';
 import exphbs from 'express-handlebars';
@@ -25,6 +26,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // cors
 app.use(cors());
+// public folder
+app.use(express.static(path.join(__dirname, 'public')));
 // view engine
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
