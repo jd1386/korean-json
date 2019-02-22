@@ -45,12 +45,13 @@ app.use('/comments', commentsRouter);
 sequelize
   .sync({ force: true })
   .then(() => {
-    console.log('db started');
     return seeders.firstGroup();
   })
   .then(() => {
-    console.log('second group seeders');
     return seeders.secondGroup();
+  })
+  .then(() => {
+    return seeders.thirdGroup();
   })
   .catch(error => console.log(error));
 

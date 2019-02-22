@@ -1,11 +1,12 @@
 import { User, Post } from '../models';
-import { times, random } from 'lodash';
+import { random } from 'lodash';
 import { randomSentence } from '../util';
 
 export default async () => {
   const users = await User.findAll();
-  users.forEach(user => {
-    times(10, async () => {
+
+  for (let user of users) {
+    for (let i = 0; i < 20; i++) {
       try {
         await Post.create({
           UserId: user.id,
@@ -15,6 +16,6 @@ export default async () => {
       } catch (e) {
         throw e;
       }
-    });
-  });
+    }
+  }
 };

@@ -1,13 +1,13 @@
 import { User, Post, Comment } from '../models';
-import { times, random } from 'lodash';
+import { random } from 'lodash';
 import { randomSentence } from '../util';
 
 export default async () => {
   const users = await User.findAll();
   const posts = await Post.findAll();
 
-  posts.forEach(post => {
-    users.forEach(async user => {
+  for (let post of posts) {
+    for (let user of users) {
       try {
         await Comment.create({
           content: randomSentence(2),
@@ -17,6 +17,6 @@ export default async () => {
       } catch (e) {
         throw e;
       }
-    });
-  });
+    }
+  }
 };

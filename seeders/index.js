@@ -6,6 +6,6 @@ import apiStatSeeder from './api_stats';
 
 export default {
   firstGroup: () => Promise.all([userSeeder()]),
-  secondGroup: () =>
-    Promise.all([postSeeder(), todoSeeder(), commentSeeder(), apiStatSeeder()])
+  secondGroup: () => Promise.all([postSeeder(), todoSeeder()]),
+  thirdGroup: () => Promise.all([commentSeeder(), apiStatSeeder()])
 };

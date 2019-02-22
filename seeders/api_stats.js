@@ -2,10 +2,10 @@ import { ApiStat } from '../models';
 
 const resources = ['users', 'posts', 'todos', 'comments'];
 
-export default () => {
-  resources.forEach(resource => {
-    ApiStat.create({
+export default async () => {
+  for (let resource of resources) {
+    await ApiStat.create({
       resource
     });
-  });
+  }
 };

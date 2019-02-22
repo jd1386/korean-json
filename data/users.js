@@ -26,7 +26,7 @@ export default [
   {
     name: '김성은',
     username: 'sunnysid3up',
-    email: 'sunny@gmail.com',
+    email: 'sunny@daum.net',
     phone: '010-4280-1991',
     website: 'https://github.com/sunnysid3up',
     province: '',
@@ -58,5 +58,29 @@ export default [
     district: '강남구',
     street: '학동로 426',
     zipcode: '06090'
+  },
+  {
+    name: '장원진',
+    username: 'jangwj2931',
+    email: 'jang@gmail.com',
+    phone: '010-4811-0921',
+    website: 'https://github.com/jangwj2931',
+    province: '',
+    city: '부산광역시',
+    district: '부산진구',
+    street: '시민공원로 30',
+    zipcode: '47193'
+  },
+  {
+    name: '최윤우',
+    username: 'yoonooyoonoo',
+    email: 'yoonooyoonoo@naver.com',
+    phone: '010-3910-9849',
+    website: 'https://blog.naver.com/yoonooyoonoo',
+    province: '',
+    city: '대전광역시',
+    district: '유성구',
+    street: '대덕대로 480',
+    zipcode: '34126'
   }
 ];
