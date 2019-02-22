@@ -16,15 +16,71 @@
   </script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+    integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css"
+    integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
   <!-- highlight.js starts -->
   <link rel="stylesheet" href="/css/ocean.css">
   <script src="/js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- highlight.js ends -->
   <style>
+    @media screen and (max-width: 600px) {
+      .display-4 {
+        font-size: 42px;
+        font-weight: 500;
+      }
+    }
+
+    .display-4 {
+      font-weight: 400;
+    }
+
+    .navbar-brand {
+      color: black !important;
+    }
+
+    .curly-braces {
+      font-size: 1.2em;
+      color: #868686;
+    }
+
     #code-response-wrapper {
       display: none;
+    }
+
+    a {
+      color: black;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    /* Sticky footer styles
+-------------------------------------------------- */
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+
+    body {
+      /* Margin bottom by footer height */
+      margin-bottom: 60px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      height: 60px;
+      line-height: 60px;
+      /* Vertically center the text there */
+      background-color: #eee;
     }
   </style>
 
@@ -32,30 +88,20 @@
 </head>
 
 <body>
-
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Korean JSON</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-
-      <a class="btn btn-sm btn-outline-primary" href="https://github.com/jd1386/korean-json">Github</a>
-    </nav>
-  </div>
-
-  <div class="container">
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-      <h1 class="display-4">Korean JSON</h1>
+  <div class="container" style="padding-bottom: 50px;">
+    <div class="px-3 py-3 md-5 pb-md-4 mx-auto">
+      <h1 class="display-4 pb-4"><span class="curly-braces">{</span> Korean JSON <span class="curly-braces">}</span>
+      </h1>
       <p class="lead mt-4">Super simple JSON API in Korean. <br />
-        Request GET, POST, DELETE actions and get JSON data in Korean
-        to
-        get
-        the most out of the look and feel of Korean language.</p>
-      <p class="lead">
+        Request GET, POST, DELETE actions and get JSON data in Korean to get
+        the most out of the look and feel of Korean language when working on your next project.</p>
+      <p class="lead mt-4">
         한국어 데이터를 제공하는 초간단 JSON API. <br />
-        GET, POST, DELETE 요청을 보내고 한국어 데이터를 받으세요. 라틴어이자 알파벳 문자인 로렘입숨 대신 한글 데이터를 사용하면 프로토타이핑을 조금 더 현실적인 환경에서, 조금 더 빠르고 즐겁게
+        GET, POST, DELETE 요청을 보내고 한국어 데이터를 받으세요. 라틴어이자 알파벳 문자인 로렘입섬 대신 한글 데이터를 사용하면 프로토타이핑을 조금 더 현실적인 환경에서, 조금 더 빠르고 즐겁게
         할
         수 있습니다.
       </p>
-      <p class="text-muted">This project is heavily inspired by <a
+      <p class="text-muted mt-4">This project is heavily inspired by <a
           href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a> of which we have been big fans for a long
         time.
         <br />
@@ -67,16 +113,12 @@
         <h3>Example</h3>
 
         <div>
-          <pre>
-          <code class="javascript">
-  fetch('https://koreanjson.com/posts/1');
-    .then(response => response.json());
-    .then(json => console.log(json));
-    .catch(error => console.log(error));
-          </code>
-        </pre>
+          <pre><code class="javascript">fetch('https://koreanjson.com/posts/1');
+  .then(response => response.json());
+  .then(json => console.log(json));
+  .catch(error => console.log(error));</code></pre>
           <div>
-            <button class="btn btn-success" id="run-code-btn">코드 실행하기</button>
+            <button class="btn btn-success btn-lg" id="run-code-btn">코드 실행하기</button>
           </div>
           <div id="code-response-wrapper">
             <pre>
@@ -84,6 +126,34 @@
             </code>
           </pre>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4" style="max-width: 400px">
+      <div>
+        <h3>Resources</h3>
+        <div>
+          <table class="table table-borderd">
+            <tbody>
+              <tr>
+                <th scope="row"><a href="/users">Users</a></th>
+                <td>유저 10명</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/posts">Posts</a></th>
+                <td>포스트 100개</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/todos">Todos</a></th>
+                <td>할 일 200개</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="/comments">Comments</a></th>
+                <td>댓글 400개</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -165,10 +235,19 @@
     <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
       <div>
         <h3>How to Contribute</h3>
-        <div><a href="http://github.com/jd1386/korean-json">Github repo</a>에서 누구나 pull request 하실 수 있습니다. </div>
+        <div>
+          <a href="http://github.com/jd1386/korean-json" target="_blank"><i class="fab fa-github"></i> Github
+            repo</a>에서 누구나 pull
+          request 하실 수 있습니다. </div>
       </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted">Made with <span style="font-size: 12px">❤</span>️ in Pangyo, South Korea</span>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -184,7 +263,7 @@
       fetch('https://koreanjson.com/posts/1')
         .then(response => response.json())
         .then(json => {
-          $('#code-response').html(JSON.stringify(json, undefined, " "));
+          $('#code-response').html(JSON.stringify(json, undefined, "  "));
           hljs.highlightBlock(document.getElementById('code-response'))
           $('#code-response-wrapper').show();
           $('#run-code-btn').replaceWith('<h4>실행 결과 😃</h4>')
