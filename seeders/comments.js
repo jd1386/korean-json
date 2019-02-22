@@ -6,13 +6,13 @@ export default async () => {
   const users = await User.findAll();
   const posts = await Post.findAll();
 
-  for (let post of posts) {
-    for (let user of users) {
+  for (let user of users) {
+    for (let i = 0; i < 20; i++) {
       try {
         await Comment.create({
           content: randomSentence(2),
           UserId: user.id,
-          PostId: post.id
+          PostId: random(1, posts.length)
         });
       } catch (e) {
         throw e;
