@@ -82,5 +82,41 @@ export default [
     district: '유성구',
     street: '대덕대로 480',
     zipcode: '34126'
+  },
+  {
+    name: '이강인',
+    username: 'kanginlee',
+    email: 'kanginlee@hanmail.net',
+    phone: '010-9311-9411',
+    website: 'https://twitter.com/@kanginlee',
+    province: '전라북도',
+    city: '전주시',
+    district: '완산구',
+    street: '풍남동3가 64-1',
+    zipcode: '55041'
+  },
+  {
+    name: '박동민',
+    username: 'dongpark',
+    email: 'dongpark@naver.com',
+    phone: '010-4941-5092',
+    website: 'https://dongpark.com',
+    province: '전라남도',
+    city: '광주광역시',
+    district: '서구',
+    street: '내방로 111',
+    zipcode: '61945'
+  },
+  {
+    name: '정지수',
+    username: 'jisoocity',
+    email: 'jisoocity@naver.com',
+    phone: '010-8591-4011',
+    website: 'https://instagram/jisoocity',
+    province: '',
+    city: '대구광역시',
+    district: '중구',
+    street: '공평로 88',
+    zipcode: '41911'
   }
 ];
