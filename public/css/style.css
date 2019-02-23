@@ -22,7 +22,7 @@
   display: none;
 }
 
-a {
+a.black {
   color: black;
   font-weight: 500;
 }
