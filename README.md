@@ -17,7 +17,7 @@ This project is heavily inspired by [JSONPlaceholder](https://jsonplaceholder.ty
 #### 1. Fork this repository
 #### 2. `git clone` your remote repository into your local machine
 #### 3. Basic setup
-  1. `$ cd koreanjson`
+  1. `$ cd korean-json`
 
   2. Install modules
        `$ npm install`
