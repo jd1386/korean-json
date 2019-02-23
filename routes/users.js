@@ -19,18 +19,26 @@ router.get('/', cache('1 week'), async (req, res) => {
   res.json(users);
 });
 
+router.post('/', (req, res) => {
+  res.status(201).end(JSON.stringify(req.body, null, 2));
+});
+
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const user = await User.findByPk(id);
   res.json(user);
 });
 
-router.post('/', (req, res) => {
-  res.status(201).send('OK');
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findByPk(id);
+  res.status(200).end(JSON.stringify(user, null, 2));
 });
 
-router.delete('/', (req, res) => {
-  res.status(202).send('OK');
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findByPk(id);
+  res.status(202).end(JSON.stringify(user, null, 2));
 });
 
 module.exports = router;
