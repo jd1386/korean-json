@@ -1,5 +1,5 @@
 import express from 'express';
-import logger from 'morgan';
+import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import path from 'path';
 import http from 'http';
@@ -19,11 +19,21 @@ import {
 const app = express();
 
 // middlewares
-// use logger
-app.use(logger('dev'));
+// use morgan
+(env => {
+  switch (env) {
+    case 'development':
+      app.use(morgan('dev'));
+      break;
+    case 'production':
+      app.use(morgan('combined'));
+      break;
+  }
+})(process.env.NODE_ENV);
+
 // parse incoming request data
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // cors
 app.use(cors());
 // public folder
@@ -42,18 +52,17 @@ app.use('/todos', todosRouter);
 app.use('/comments', commentsRouter);
 
 // connect to database and run seeders
-sequelize
-  .sync({ force: true })
-  .then(() => {
-    return seeders.firstGroup();
-  })
-  .then(() => {
-    return seeders.secondGroup();
-  })
-  .then(() => {
-    return seeders.thirdGroup();
-  })
-  .catch(error => console.log(error));
+sequelize.sync();
+// .then(() => {
+//   return seeders.firstGroup();
+// })
+// .then(() => {
+//   return seeders.secondGroup();
+// })
+// .then(() => {
+//   return seeders.thirdGroup();
+// })
+// .catch(error => console.log(error));
 
 // start server
 const port = parseInt(process.env.PORT) || 5000;

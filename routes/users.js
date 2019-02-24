@@ -20,7 +20,7 @@ router.get('/', cache('1 week'), async (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  res.status(201).end(JSON.stringify(req.body, null, 2));
+  res.status(201).json(req.body);
 });
 
 router.get('/:id', async (req, res) => {
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
   const user = await User.findByPk(id);
-  res.status(200).end(JSON.stringify(user, null, 2));
+  res.status(200).json(user);
 });
 
 router.delete('/:id', async (req, res) => {
