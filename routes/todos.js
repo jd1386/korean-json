@@ -34,7 +34,22 @@ router.get('/', cache('1 week'), async (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const todo = await Todo.findByPk(id);
-  res.json(todo);
+  ApiStatCounter('todos');
+  res.status(200).json(todo);
+});
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const todo = await Todo.findByPk(id);
+  ApiStatCounter('todos');
+  res.status(200).json(todo);
+});
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  const todo = await Todo.findByPk(id);
+  ApiStatCounter('todos');
+  res.status(202).json(todo);
 });
 
 module.exports = router;

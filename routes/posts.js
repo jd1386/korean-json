@@ -35,7 +35,21 @@ router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const post = await Post.findByPk(id);
   ApiStatCounter('posts');
-  res.json(post);
+  res.status(200).json(post);
+});
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const post = await Post.findByPk(id);
+  ApiStatCounter('posts');
+  res.status(200).json(post);
+});
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  const post = await Post.findByPk(id);
+  ApiStatCounter('posts');
+  res.status(202).json(post);
 });
 
 module.exports = router;
