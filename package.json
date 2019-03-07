@@ -27,6 +27,7 @@
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
+    "nodemon": "^1.18.10",
     "pm2": "^3.3.1",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0"
