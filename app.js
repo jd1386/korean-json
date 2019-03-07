@@ -53,16 +53,6 @@ app.use('/comments', commentsRouter);
 
 // connect to database and run seeders
 sequelize.sync();
-// .then(() => {
-//   return seeders.firstGroup();
-// })
-// .then(() => {
-//   return seeders.secondGroup();
-// })
-// .then(() => {
-//   return seeders.thirdGroup();
-// })
-// .catch(error => console.log(error));
 
 // start server
 const port = parseInt(process.env.PORT) || 5000;
