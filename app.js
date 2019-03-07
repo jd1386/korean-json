@@ -14,6 +14,7 @@ import {
   postsRouter,
   todosRouter,
   commentsRouter,
+  albumsRouter
 } from './routes';
 
 // initialize app instance
@@ -54,6 +55,7 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/todos', todosRouter);
 app.use('/comments', commentsRouter);
+app.use('/albums', albumsRouter);
 
 // connect to database and run seeders
 sequelize.sync();
