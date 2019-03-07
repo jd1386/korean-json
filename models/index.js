@@ -41,13 +41,13 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 // Relations
-db.User.hasMany(db.Post);
+db.User.hasMany(db.Post, { onDelete: 'cascade' });
 db.Post.belongsTo(db.User);
-db.User.hasMany(db.Todo);
+db.User.hasMany(db.Todo, { onDelete: 'cascade' });
 db.Todo.belongsTo(db.User);
-db.User.hasMany(db.Comment);
+db.User.hasMany(db.Comment, { onDelete: 'cascade' });
 db.Comment.belongsTo(db.User);
-db.Post.hasMany(db.Comment);
+db.Post.hasMany(db.Comment, { onDelete: 'cascade' });
 db.Comment.belongsTo(db.Post);
 
 module.exports = db;
