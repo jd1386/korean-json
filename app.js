@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import helmet from 'helmet';
 import bodyParser from 'body-parser';
 import path from 'path';
 import http from 'http';
@@ -12,7 +13,7 @@ import {
   usersRouter,
   postsRouter,
   todosRouter,
-  commentsRouter
+  commentsRouter,
 } from './routes';
 
 // initialize app instance
@@ -30,6 +31,9 @@ const app = express();
       break;
   }
 })(process.env.NODE_ENV);
+
+// helmet
+app.use(helmet());
 
 // parse incoming request data
 app.use(bodyParser.json());
