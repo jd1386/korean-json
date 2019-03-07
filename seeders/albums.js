@@ -1,5 +1,4 @@
 import { User, Album } from '../models';
-import { random } from 'lodash';
 import { randomSentence } from '../util';
 
 export default async () => {

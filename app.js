@@ -7,7 +7,7 @@ import http from 'http';
 import cors from 'cors';
 import exphbs from 'express-handlebars';
 import apicache from 'apicache';
-import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
+import { sequelize, User, Post, Todo, Comment, Album, ApiStat } from './models';
 import seeders from './seeders';
 import {
   usersRouter,
