@@ -22,7 +22,22 @@ This project is heavily inspired by [JSONPlaceholder](https://jsonplaceholder.ty
   2. Install modules
        `$ npm install`
 
-  3. Create local database
+  3. ***(Important)*** Change database credentials 
+      Open up `config/config.json` file which holds database credentials. Modify username and password values in the development environment as follows. 
+
+      ```json
+      "development": {
+          "username": "<YOUR_DATABASE_USERNAME>",
+          "password": "<YOUR_DATABASE_PASSWORD>",
+          "database": "koreanjson_development",
+          "host": "127.0.0.1",
+          "dialect": "mysql"
+        }
+      ```
+
+      
+
+  4. Create local database
 
        Once you run the following script
 
