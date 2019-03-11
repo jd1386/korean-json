@@ -23,6 +23,7 @@ This project is heavily inspired by [JSONPlaceholder](https://jsonplaceholder.ty
        `$ npm install`
 
   3. ***(Important)*** Change database credentials 
+
       Open up `config/config.json` file which holds database credentials. Modify username and password values in the development environment as follows. 
 
       ```json
