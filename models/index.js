@@ -49,5 +49,7 @@ db.User.hasMany(db.Comment, { onDelete: 'cascade' });
 db.Comment.belongsTo(db.User);
 db.Post.hasMany(db.Comment, { onDelete: 'cascade' });
 db.Comment.belongsTo(db.Post);
+db.User.hasMany(db.Album);
+db.Album.belongsTo(db.User);
 
 module.exports = db;

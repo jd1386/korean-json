@@ -7,13 +7,14 @@ import http from 'http';
 import cors from 'cors';
 import exphbs from 'express-handlebars';
 import apicache from 'apicache';
-import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
+import { sequelize, User, Post, Todo, Comment, Album, ApiStat } from './models';
 import seeders from './seeders';
 import {
   usersRouter,
   postsRouter,
   todosRouter,
   commentsRouter,
+  albumsRouter
 } from './routes';
 
 // initialize app instance
@@ -54,6 +55,7 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/todos', todosRouter);
 app.use('/comments', commentsRouter);
+app.use('/albums', albumsRouter);
 
 // connect to database and run seeders
 sequelize.sync();
