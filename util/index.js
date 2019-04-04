@@ -1,5 +1,5 @@
 import { times, random } from 'lodash';
-import { sentences } from '../data';
+import { sentences, paragraphs } from '../data';
 import { ApiStat } from '../models';
 
 const randomSentence = (lineNum = 1) => {
@@ -12,6 +12,10 @@ const randomSentence = (lineNum = 1) => {
   return sentenceGenerated.join(' ');
 };
 
+const randomParagraph = () => {
+  return paragraphs[random(paragraphs.length - 1)];
+}
+
 const ApiStatCounter = async resource => {
   try {
     const counter = await ApiStat.findOne({ where: { resource } });
@@ -22,4 +26,4 @@ const ApiStatCounter = async resource => {
   }
 };
 
-export { randomSentence, ApiStatCounter };
+export { randomSentence, randomParagraph, ApiStatCounter };
