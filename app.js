@@ -7,6 +7,7 @@ import http from 'http';
 import cors from 'cors';
 import exphbs from 'express-handlebars';
 import apicache from 'apicache';
+import { formatNumber } from './util';
 import { sequelize, User, Post, Todo, Comment, ApiStat } from './models';
 import seeders from './seeders';
 import {
@@ -14,7 +15,7 @@ import {
   postsRouter,
   todosRouter,
   commentsRouter,
-  paragraphRouter,
+  paragraphRouter
 } from './routes';
 
 // initialize app instance
@@ -48,8 +49,11 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 // routes
-app.get('/', (req, res) => {
-  res.render('home');
+app.get('/', async (req, res) => {
+  const sumOfCount = await ApiStat.sum('count');
+  res.render('home', {
+    apiCallCount: formatNumber(sumOfCount)
+  });
 });
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);

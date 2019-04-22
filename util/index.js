@@ -14,7 +14,7 @@ const randomSentence = (lineNum = 1) => {
 
 const randomParagraph = () => {
   return paragraphs[random(paragraphs.length - 1)];
-}
+};
 
 const ApiStatCounter = async resource => {
   try {
@@ -26,4 +26,7 @@ const ApiStatCounter = async resource => {
   }
 };
 
-export { randomSentence, randomParagraph, ApiStatCounter };
+const formatNumber = num =>
+  num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
+export { randomSentence, randomParagraph, ApiStatCounter, formatNumber };
