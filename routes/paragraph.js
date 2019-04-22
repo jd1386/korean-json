@@ -13,7 +13,7 @@ const updateApiStat = (req, res, next) => {
 
 router.use(updateApiStat);
 
-router.get('/', cache('1 week'), async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const paragraph = randomParagraph();
     res.json(paragraph);

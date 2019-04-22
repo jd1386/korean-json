@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development nodemon app.js --exec babel-node --presets @babel/env",
     "test": "NODE_ENV=test npx mocha --require @babel/register --require @babel/polyfill --exit ./test/**.spec.js"
   },
-  "author": "Jungdo Lee & Jae Wan Kim",
+  "author": "Jungdo Lee",
   "repository": "github:jd1386/korean-json",
   "license": "ISC",
   "dependencies": {
