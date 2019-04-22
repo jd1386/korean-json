@@ -31,6 +31,10 @@ router.get('/', cache('1 week'), async (req, res) => {
   }
 });
 
+router.post('/', (req, res) => {
+  res.status(201).json(req.body);
+});
+
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const todo = await Todo.findByPk(id);

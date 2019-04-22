@@ -44,6 +44,10 @@ router.get('/', cache('1 week'), async (req, res) => {
   res.json(comments);
 });
 
+router.post('/', (req, res) => {
+  res.status(201).json(req.body);
+});
+
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const comment = await Comment.findByPk(id);
