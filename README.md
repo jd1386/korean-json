@@ -1,5 +1,5 @@
 # korean-json
-Super simple JSON API in Korean. 
+Super simple JSON API serving Korean data. See [korean-json](https://koreanjson.com) in action.
 
 
 ## What is Korean JSON?
