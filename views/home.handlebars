@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <!-- highlight.js starts -->
   <link rel="stylesheet" href="/css/ocean.css">
-  <script async defer src="/js/highlight.pack.js"></script>
+  <script src="/js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- highlight.js ends -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -291,7 +291,9 @@
           $('#code-response-wrapper').show();
           $('#run-code-btn').replaceWith('<h4>실행 결과 😃</h4>')
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+          $('#code-response').text(error);
+        });
     });
   </script>
 
