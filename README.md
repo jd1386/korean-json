@@ -24,7 +24,7 @@ This project is heavily inspired by [JSONPlaceholder](https://jsonplaceholder.ty
 
   3. ***(Important)*** Change database credentials 
 
-      Open up `config/config.json` file which holds database credentials. Modify username and password values in the development environment as follows. 
+      Open up `config/db.json` file which holds database credentials. Modify username and password values in the development environment as follows. 
 
       ```json
       "development": {
